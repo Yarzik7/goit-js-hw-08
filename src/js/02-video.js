@@ -1,1 +1,1 @@
-import Vimeo from "@vimeo";
+import Vimeo from "@vimeo/player";
