@@ -8,7 +8,7 @@ loadingPage(); // Завантаження сторінки
 
 /**
  * Функція при завантаженні сторінки перевіряє чи були збережені відповідні дані раніше. Якщо так то завантажує дані у відповідні поля
- * @returns {void}
+ * @returns {undefined || void}
  */
 function loadingPage() {
   const savedData = localStorage.getItem(KEY); // Отримує збережені дані за ключем
@@ -39,9 +39,8 @@ const onInputFormFields = () => {
   }
 };
 
-
 /**
- * 
+ *
  * @param {event} Об'єкт події "submit"
  */
 const onSubmitForm = event => {
