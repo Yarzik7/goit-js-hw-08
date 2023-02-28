@@ -1,12 +1,8 @@
 import { galleryItems } from './gallery-items';
+import SimpleLightbox from 'simplelightbox'; // Підключення SimpleLightbox встановленої через npm
+import 'simplelightbox/dist/simple-lightbox.min.css'; // Імпорт стилів для SimpleLightbox
 
-// Описаний в документації
-import SimpleLightbox from "simplelightbox";
-
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
-
-const galleryEl = document.querySelector(".gallery");
+const galleryEl = document.querySelector('.gallery');
 const galleryNodes = []; // Масив для зберігання окремих вузлів "li"
 
 /**
@@ -15,15 +11,15 @@ const galleryNodes = []; // Масив для зберігання окреми�
  * @returns {void}
  */
 const createItem = ({ original, description, preview }) => {
-  const galleryItem = document.createElement("div"); // Створення окремого елемента "div"
-  galleryItem.classList.add("gallery__item");
+  const galleryItem = document.createElement('div'); // Створення окремого елемента "div"
+  galleryItem.classList.add('gallery__item');
 
-  const galleryLink = document.createElement("a");
-  galleryLink.classList.add("gallery__item");
+  const galleryLink = document.createElement('a');
+  galleryLink.classList.add('gallery__item');
   galleryLink.href = original;
 
-  const galleryImage = document.createElement("img");
-  galleryImage.classList.add("gallery__image");
+  const galleryImage = document.createElement('img');
+  galleryImage.classList.add('gallery__image');
   galleryImage.src = preview;
   galleryImage.alt = description;
 
@@ -33,11 +29,11 @@ const createItem = ({ original, description, preview }) => {
   galleryNodes.push(galleryItem);
 };
 
-galleryItems.forEach((item) => createItem(item)); // Перебір даних з об'єкту galleryItems і створення елементу галереї
+galleryItems.forEach(item => createItem(item)); // Перебір даних з об'єкту galleryItems і створення елементу галереї
 galleryEl.append(...galleryNodes); // Додає готові вузли розмітки в контейнер галереї
 
 // Створення і рендер модального вікна за допомогою бібліотеки SimpleLightbox
-new SimpleLightbox(".gallery a", {
-  captionsData: "alt", // Додає підпис зображення з текстом атрибуту "alt"
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt', // Додає підпис зображення з текстом атрибуту "alt"
   captionDelay: 250, // Затримка показу підпису зображення
 });
