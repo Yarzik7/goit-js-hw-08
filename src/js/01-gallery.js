@@ -4,7 +4,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css'; // Імпорт стилі
 
 const galleryEl = document.querySelector('.gallery');
 const galleryNodes = []; // Масив для зберігання окремих вузлів "li"
-
+console.log('t');
 /**
  * Функція створює розмітку елементів галереї
  * @param {{ original, description, preview }} Деструктуризація об'єкту параметрів galleryItems
